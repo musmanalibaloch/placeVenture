@@ -12,6 +12,8 @@ import { RegisterComponent } from './account/register/register.component';
 const appRoutes:Routes =[
   { path:"", component:HomeComponent },
   { path:"placeventure", component:LandingComponent },
+  { path:"login", component:LoginComponent },
+  { path:"register", component:RegisterComponent },
 ]
 @NgModule({
   declarations: [

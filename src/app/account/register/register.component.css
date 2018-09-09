@@ -1,0 +1,63 @@
+.wrap{
+    width: 100vw;
+    height: 100vh;
+    background: #7B0098;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+h2{
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+    top: 10%;
+    font-size: 2rem;   
+}
+.log-form{
+    position: relative;
+    top: 20%;
+    width: 80vw;
+    height: 10vh;
+    border: none;
+    margin: 0 auto;
+}
+.log-form input{
+    margin: 5% 0 10% 0;
+}
+#log-username , #log-pass , #log-email{
+    border: 2px solid #ffffff !important;
+    background: #7B0098;
+    outline: none;
+    height: 7vh;
+    border-radius: 0 !important; 
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: .6px;
+}
+#log-username::placeholder , #log-pass::placeholder ,
+#log-email::placeholder{
+    color: #ffffff;
+    font-size: 100%;
+}
+button#log-btn{
+    background: #ffffff;
+    border-radius: 0 !important;
+    color: #7B0098;
+    font-size: 100% 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+p{
+    color: #ffffff;
+    font-size: 100%;
+    margin: 15px 0;
+}
+p a{
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0 5px;
+    text-decoration: underline;
+}
