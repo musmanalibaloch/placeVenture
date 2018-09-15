@@ -99,32 +99,20 @@ a#createpost:hover{
 }
 
 /* menu css */
-div#menu{
- width: 100%;    
+div.menu{
+    padding: 10px 0;
 }
-div#menu ul{
-    padding: 0;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-}
-div#menu ul li{
+#homeLink{
+    text-decoration: none;
     display: inline-block;
-    width: 50%;
-    line-height: 0;
-}
-div#menu li img{
-    width: 20px;
-    height: auto;
-    vertical-align: middle;
-}
-div#menu span{
     color: #ffffff;
-    display: inline-block;
-    text-align: right;
-    padding-left: 10px;
+    font-size: 15px;
     vertical-align: middle;
 }
+/* #homeLink span{
+    padding: 5px;
+} */
+
 #userLogin{
     float: right;
     text-decoration: none;
@@ -133,9 +121,6 @@ div#menu span{
     font-size: 15px;
     vertical-align: middle;
 }
-a#userlogin span{
-    display: inline-block;
-    font-size:14px;
-    color:#ffffff;
-    padding: 0 10px 0 0;
+#userLogin span{
+    padding: 5px;
 }

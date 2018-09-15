@@ -9,12 +9,23 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <h2>
-            Create Post
-            <a routerLink="/register" id="userLogin">
+          <div class="menu"><!-- heading start-->
+
+            <!-- home routerlink -->
+            <a routerLink="/" id="homeLink">
+              <img src="../../assets/images/left-arrow.png" alt="">
+              <!-- <span>Back</span> -->
+            </a>
+
+            <!-- User log detail -->
+            <a id="userLogin">
               <img src="../../assets//images//user.png" alt="">
               <span>welcome</span>
             </a>
+
+          </div>
+          <h2>
+              Create Post
           </h2>
           <div class="review">
             <!-- <h6>Location Name</h6> -->
@@ -32,19 +43,5 @@
         </div>
       </div>
       <a routerLink="/reviewpost" id="createpost">Post</a>
-    </div>
-
-    <div id="menu">
-      <ul>
-        <li>
-          <a routerLink="/">
-            <img src="../../assets/images/home-fill.png" alt="">
-            <span>Home</span>
-          </a>
-        </li>
-        <li>
-          
-        </li>
-      </ul>
     </div>
   </div>
