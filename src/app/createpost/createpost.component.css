@@ -1,0 +1,141 @@
+.wrap{
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    background: #7B0098;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+h2{
+    color: #ffffff;
+    text-align: left;
+    padding: 0 0 30px 0;
+    position: relative;
+    top: 15px;
+    font-size: 1.5rem;   
+}
+/* //Search bar css */
+.search-wrap{
+  background: #ffffff;
+}
+#search-bar{
+    width: 100vw;
+    height: 45px;
+    background: url('../../assets/images/loc-icon.png') no-repeat #ffffff;
+    background-position: 9px center;
+    background-size: auto;
+    margin: 0 auto;
+    border: 0 solid transparent;
+    padding: 0 0 0 50px;
+    background-size: 30px;
+    outline: none;
+}
+.review {
+    position: relative;
+    background: #ffffff;
+    margin: 0 0 10px 0;
+    padding: 5px 5px 20px 5px;
+}
+.review h6{
+    color: #7B0098;
+}
+.review #post{
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0px 3px 10px 0px rgba(0,0,0,.5);
+}
+.review #photo{
+    float: left;
+}
+.review #post #photo{
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+}
+.review #post #photo #uploadFile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.review #post #photo img{
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+#user-reviews{
+    color: #454545;
+}
+#user-reviews textarea{
+    width: 100%;
+    color: #454545;
+}
+a#createpost{
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+    border: 1px solid #7B0098;
+    border-radius: 0;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0px -3px 10px 0px rgba(0,0,0,.5);
+    font-weight: bold;
+    text-transform: uppercase !important;
+    color: #7B0098;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: .4s all;
+}
+a#createpost:hover{
+    margin-bottom: 2px;
+    transition: .4s all;
+}
+
+/* menu css */
+div#menu{
+ width: 100%;    
+}
+div#menu ul{
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+div#menu ul li{
+    display: inline-block;
+    width: 50%;
+    line-height: 0;
+}
+div#menu li img{
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+}
+div#menu span{
+    color: #ffffff;
+    display: inline-block;
+    text-align: right;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+#userLogin{
+    float: right;
+    text-decoration: none;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 15px;
+    vertical-align: middle;
+}
+a#userlogin span{
+    display: inline-block;
+    font-size:14px;
+    color:#ffffff;
+    padding: 0 10px 0 0;
+}

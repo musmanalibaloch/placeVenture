@@ -1,0 +1,95 @@
+.wrap{
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    background: #7B0098;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+h2{
+    color: #ffffff;
+    text-align: left;
+    padding: 0 0 30px 0;
+    position: relative;
+    top: 5%;
+    font-size: 1.5rem;   
+}
+/* //Search bar css */
+.search-wrap{
+  background: #ffffff;
+}
+#search-bar{
+    width: 100vw;
+    height: 45px;
+    background: url('../../assets/images/loc-icon.png') no-repeat #ffffff;
+    background-position: 9px center;
+    background-size: auto;
+    margin: 0 auto;
+    border: 0 solid transparent;
+    padding: 0 0 0 50px;
+    background-size: 30px;
+    outline: none;
+}
+.review {
+    position: relative;
+    background: #ffffff;
+    margin: 0 0 10px 0;
+    padding: 5px 5px 20px 5px;
+}
+.review h6{
+    color: #7B0098;
+}
+.review #post{
+    position: relative;
+    margin-bottom: 10px;
+    background: #ffffff;
+    box-shadow: 0px 3px 10px 0px rgba(0,0,0,.5);
+}
+.review #photo{
+    float: left;
+}
+.review #post #photo{
+    /* width: 20vw;
+    height: auto; */
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+.review #post #photo img{
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.review #post-review p{
+    padding: 0 5px 0px 5px;
+    font-size: 100%;
+    display: inline-block;
+    color: #606060;
+    word-break: break-word;
+    font-size: 14px;
+}
+a#createpost{
+    display: inline-block;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+    border: 1px solid #7B0098;
+    border-radius: 0;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0px -3px 10px 0px rgba(0,0,0,.5);
+    font-weight: bold;
+    text-transform: uppercase !important;
+    color: #7B0098;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: .4s all;
+}
+a#createpost:hover{
+    margin-bottom: 2px;
+    transition: .4s all;
+}
