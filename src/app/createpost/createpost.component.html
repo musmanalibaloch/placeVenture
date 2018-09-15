@@ -31,9 +31,14 @@
           <!-- <h6>Location Name</h6> -->
           <div id="post">
             <div id="photo">
-              <img src="../../assets/images/upload-img.png" alt="">
-              <input type="file" name="" id="uploadFile">
+              <img [src]="uploaded_img || '../../assets/images/upload-img.png'" alt="">
+              <input type="file" 
+                     name="upladed_photo" 
+                     id="uploadFile"
+                     (change)="uploaded_newPhoto($event)"
+              >
             </div>
+            
             <div style="clear: left;"></div>
           </div>
         </div>

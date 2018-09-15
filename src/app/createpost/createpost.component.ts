@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatepostComponent implements OnInit {
 
-  constructor() { }
+  uploaded_img:any;
+
+  constructor() {
+   }
 
   ngOnInit() {
   }
 
+  uploaded_newPhoto(event) {
+    if (event.target.files && event.target.files[0]) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = event => this.uploaded_img = reader.result;
+        reader.readAsDataURL(file);
+    }
+}
 }
