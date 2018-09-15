@@ -12,7 +12,7 @@ h2{
     text-align: left;
     padding: 0 0 30px 0;
     position: relative;
-    top: 15px;
+    top: 5%;
     font-size: 1.5rem;   
 }
 /* //Search bar css */
@@ -42,6 +42,7 @@ h2{
 }
 .review #post{
     position: relative;
+    margin-bottom: 10px;
     background: #ffffff;
     box-shadow: 0px 3px 10px 0px rgba(0,0,0,.5);
 }
@@ -49,35 +50,30 @@ h2{
     float: left;
 }
 .review #post #photo{
+    /* width: 20vw;
+    height: auto; */
     width: 100%;
-    overflow: hidden;
     height: auto;
-}
-.review #post #photo #uploadFile{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+    margin: 0;
 }
 .review #post #photo img{
     width: 100%;
     height: 100%;
     vertical-align: top;
 }
-#user-reviews{
-    color: #454545;
-}
-#user-reviews textarea{
-    width: 100%;
-    color: #454545;
+
+.review #post-review p{
+    padding: 0 5px 0px 5px;
+    font-size: 100%;
+    display: inline-block;
+    color: #606060;
+    word-break: break-word;
+    font-size: 14px;
 }
 a#createpost{
     display: inline-block;
-    width: 100%;
-    position: relative;
-    top: 100%;
+    width: 100vw;
+    position: absolute;
     bottom: 0;
     left: 0;
     background: #ffffff;
@@ -96,46 +92,4 @@ a#createpost{
 a#createpost:hover{
     margin-bottom: 2px;
     transition: .4s all;
-}
-
-/* menu css */
-div#menu{
- width: 100%;    
-}
-div#menu ul{
-    padding: 0;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-}
-div#menu ul li{
-    display: inline-block;
-    width: 50%;
-    line-height: 0;
-}
-div#menu li img{
-    width: 20px;
-    height: auto;
-    vertical-align: middle;
-}
-div#menu span{
-    color: #ffffff;
-    display: inline-block;
-    text-align: right;
-    padding-left: 10px;
-    vertical-align: middle;
-}
-#userLogin{
-    float: right;
-    text-decoration: none;
-    display: inline-block;
-    color: #ffffff;
-    font-size: 15px;
-    vertical-align: middle;
-}
-a#userlogin span{
-    display: inline-block;
-    font-size:14px;
-    color:#ffffff;
-    padding: 0 10px 0 0;
 }

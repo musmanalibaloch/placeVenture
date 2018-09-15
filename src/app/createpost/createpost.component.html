@@ -1,46 +1,50 @@
 <div class="wrap">
-  <div class="container">
-    <div class="row">
-      <h2>Create Post</h2>
-      <div class="col-sm-12">
-        <div id="create-content">
-          <form action="">
-          <div class="img-wrap">
-            <img src="../../assets/icons/icon-128x128.png" alt="upload Photos">
-            <label for="">Upload Photo</label>
-            <input type="file" name="upload-photo" id="upload">
+    <div class="search-wrap">
+      <input type="search" 
+             name="" 
+             id="search-bar"
+             placeholder="Search Location"
+      >
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>
+            Create Post
+            <a routerLink="/register" id="userLogin">
+              <img src="../../assets//images//user.png" alt="">
+              <span>welcome</span>
+            </a>
+          </h2>
+          <div class="review">
+            <!-- <h6>Location Name</h6> -->
+            <div id="post">
+              <div id="photo">
+                <img src="../../assets/images/upload-img.png" alt="">
+                <input type="file" name="" id="uploadFile">
+              </div>
+              <div style="clear: left;"></div>
+            </div>
           </div>
-          <div class="upload">
-            <select id="Location">
-              <option value="default">Select Location</option>
-              <option value="">Islamabad</option>
-              <option value="">Karachi</option>
-              <option value="">Lahore</option>
-              <option value="">peshawar</option>
-              <option value="">Rawalpindi</option>
-              <option value="">Layyah</option>
-            </select>
-            <input type="text" 
-                   name="seacrh-manually" 
-                   id="manual-loaction"
-                   placeholder="Type Location"
-            >
+          <div id="user-reviews">
+            <textarea name="" id="" cols="30" rows="5">Write your reviews here...</textarea>
           </div>
-          <div id="date">
-              <input id="date" type="date" value="2017-06-01">
-          </div>
-          <div id="review">
-            <textarea name="reviews" 
-                      id="reviews" 
-                      cols="5" 
-                      rows="5"
-                      placeholder="Write review"
-            >
-            </textarea>
-          </div>
-          </form>
         </div>
       </div>
+      <a routerLink="/reviewpost" id="createpost">Post</a>
+    </div>
+
+    <div id="menu">
+      <ul>
+        <li>
+          <a routerLink="/">
+            <img src="../../assets/images/home-fill.png" alt="">
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          
+        </li>
+      </ul>
     </div>
   </div>
-</div>
