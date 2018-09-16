@@ -4,27 +4,36 @@
       <div class="col-sm-12">
         <h2>Login</h2>
         <div class="log-form">
-          
-            <input type="text" 
-                   name="username" 
-                   id="log-username"
-                   placeholder="User Name"
+          <form #logInForm='ngForm' (ngSubmit)="logInForm.form.valid && loginData(logInForm.form)" novalidate>
+            <input type="email" 
+                   name="email" 
+                   id="log-email"
+                   placeholder="User email"
                    class="form-control"
+                   pattern=""
+                   [(ngModel)]=login.email
+                   #email='ngModel'
+                   required
             >
             <input type="password" 
                    name="password" 
                    id="log-pass"
                    placeholder="Your Password"
                    class="form-control"
+                   pattern=""
+                   [(ngModel)]=login.password
+                   #password='ngModel'
+                   required
             >
             <button id="log-btn"
+                    type="submit"
                     class="form-control"
-                    routerLink="/reviewpost"
+                    [disabled]="!logInForm.form.valid || !password.valid || !email.valid"
             >
               LOGIN
             </button>
             <p>Not Registered? <a routerLink="/register">Signup Now</a></p>
-          
+          </form>  
         </div>
       </div>
     </div>

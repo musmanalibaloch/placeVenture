@@ -26,7 +26,7 @@ h2{
 .log-form input{
     margin: 5% 0 10% 0;
 }
-#log-username , #log-pass{
+#log-email , #log-pass{
     border: 2px solid #ffffff !important;
     background: #7B0098;
     outline: none;
@@ -36,7 +36,7 @@ h2{
     font-weight: bold;
     letter-spacing: .6px;
 }
-#log-username::placeholder , #log-pass::placeholder{
+#log-email::placeholder , #log-pass::placeholder{
     color: #ffffff;
     font-size: 100%;
     font-weight: 400;
@@ -50,6 +50,11 @@ button#log-btn{
     vertical-align: middle;
     font-weight: bold;
     letter-spacing: .5px;
+}
+button#log-btn:disabled{
+    background: #606060;
+    color: #909090;
+    cursor: not-allowed;
 }
 p{
     color: #ffffff;

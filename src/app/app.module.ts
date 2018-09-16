@@ -1,7 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes ,RouterModule } from "@angular/router";
+import { FormsModule,ReactiveFormsModule } from "@angular/forms";
+import { ApiService } from "./services/api.service";
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
+
+// ng-google maps
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -37,11 +44,20 @@ const appRoutes:Routes =[
     CreatepostComponent
   ],
   imports: [
+      AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDtWJ1VVgvC4WzSB4CdQvso7XHAgykEXaA',
+      libraries: ["places"]
+    }),
+    HttpClientModule, 
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

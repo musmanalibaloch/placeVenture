@@ -3,29 +3,54 @@
     <div class="row">
       <div class="col-sm-12">
         <h2>Signup</h2>
+        <div class="msg success" *ngIf="account_created">
+          <p class="text-center">
+            <strong>Welcome! </strong>
+            <span> Your Account has been created</span> 
+          </p>
+        </div>
+        <div class="msg danger" *ngIf="account_Notcreated">
+          <p class="text-center">
+            <strong>Sorry! </strong>
+            <span> Please Check your email, password</span> 
+          </p>
+        </div>
         <div class="log-form">
-          <form action="">
+          <form action="" #signUpForm='ngForm' (ngSubmit)="signUpForm.form.valid && signupData(signUpForm.form)" novalidate>
             <input type="text" 
-                   name="username" 
+                   name="name" 
                    id="log-username"
                    placeholder="User Name"
                    class="form-control"
+                   [(ngModel)]='signup.name'
+                   #name='ngModel'
+                   required
             >
             <input type="email" 
                    name="email" 
                    id="log-email"
                    placeholder="Your Email"
                    class="form-control"
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                   [(ngModel)]='signup.email'
+                   #email='ngModel'
+                   required
             >
-            <input type="password" 
+            <input type="password"
+                   autocomplete="off" 
                    name="password" 
                    id="log-pass"
                    placeholder="Your Password"
                    class="form-control"
+                   pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                   [(ngModel)]='signup.password'
+                   #password='ngModel'
+                   required
             >
             <button id="log-btn"
+                    type="submit"
                     class="form-control"
-                    routerLink="/login"
+                    [disabled]="!signUpForm.valid || !password.valid || !email.valid"
             >
               Create Account
             </button>

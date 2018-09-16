@@ -51,6 +51,12 @@ button#log-btn{
     font-weight: bold;
     letter-spacing: .5px;
 }
+button#log-btn:disabled{
+    background: #606060;
+    color: #909090;
+    border: none !important;
+    cursor: not-allowed;
+}
 p{
     color: #ffffff;
     font-size: 100%;
@@ -61,4 +67,28 @@ p a{
     font-weight: bold;
     padding: 0 5px;
     text-decoration: underline;
+}
+
+/* //Notifications style */
+div.msg{
+    color: #7B0098;
+    font-size:16px;
+    letter-spacing: .5px;
+    padding: 10px 0;
+    position: absolute;
+    z-index: 999;
+    top: 40%;
+    width: 85vw;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+}
+div.msg p{
+    color: #7B0098;
+} 
+div.success{
+    background: rgb(127, 255, 127);
+}
+div.danger{
+    background: rgb(255, 157, 127);
 }

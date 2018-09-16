@@ -1,10 +1,18 @@
 <div class="wrap">
   <div class="search-wrap">
-    <input type="search" 
-           name="" 
+    <input placeholder=" search for location" 
            id="search-bar"
-           placeholder="Search Location"
-    >
+            autocorrect="off" 
+            autocapitalize="off" 
+            spellcheck="off" 
+            type="text" 
+            class="form-control"
+            [formControl]="searchControl"
+            (change)="getLocationValue(search.value)"
+            #search
+           >
+           
+    <span id="getLoctaion" (click)="setCurrentPosition()"></span>
   </div>
   <div class="container">
     <div class="row">
@@ -38,15 +46,18 @@
                      (change)="uploaded_newPhoto($event)"
               >
             </div>
-            
             <div style="clear: left;"></div>
           </div>
         </div>
         <div id="user-reviews">
-          <textarea name="" id="" cols="30" rows="5">Write your reviews here...</textarea>
+          <textarea name="review" [(ngModel)]="reviews" id="" cols="30" rows="5"  placeholder="Describe yourself here..."></textarea>
         </div>
       </div>
     </div>
-    <a routerLink="/reviewpost" id="createpost">Post</a>
+    <button  id="createpost" (click)="createPost($event,search.value)"  [disabled]="isReady()">Post</button>
+    <div class="msg success" *ngIf="posting">
+      <span class="text-right">posting....</span>
+    </div>
+    
   </div>
 </div>
