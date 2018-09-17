@@ -1,23 +1,15 @@
 <div class="wrap">
   <div class="search-wrap">
-    <input placeholder=" search for location" 
-           id="search-bar"
-            autocorrect="off" 
-            autocapitalize="off" 
-            spellcheck="off" 
-            type="text" 
-            class="form-control"
-            [formControl]="searchControl"
-            (change)="getLocationValue(search.value)"
-            #search
-           >
-           
+    <input placeholder=" search for location" id="search-bar" autocorrect="off" autocapitalize="off" spellcheck="off"
+      type="text" class="form-control" [formControl]="searchControl" (change)="getLocationValue(search.value)" #search>
+
     <span id="getLoctaion" (click)="setCurrentPosition()"></span>
   </div>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <div class="menu"><!-- heading start-->
+        <div class="menu">
+          <!-- heading start-->
 
           <!-- home routerlink -->
           <a routerLink="/" id="homeLink">
@@ -33,31 +25,45 @@
 
         </div>
         <h2>
-            Create Post
+          Create Post
         </h2>
         <div class="review">
           <!-- <h6>Location Name</h6> -->
           <div id="post">
             <div id="photo">
               <img [src]="uploaded_img || '../../assets/images/upload-img.png'" alt="">
-              <input type="file" 
-                     name="upladed_photo" 
-                     id="uploadFile"
-                     (change)="uploaded_newPhoto($event)"
-              >
+              <input type="file" name="upladed_photo" id="uploadFile" (change)="uploaded_newPhoto($event)">
             </div>
             <div style="clear: left;"></div>
           </div>
         </div>
         <div id="user-reviews">
-          <textarea name="review" [(ngModel)]="reviews" id="" cols="30" rows="5"  placeholder="Describe yourself here..."></textarea>
+          <textarea name="review" [(ngModel)]="reviews" id="" cols="30" rows="5" placeholder="Describe yourself here..."></textarea>
         </div>
       </div>
     </div>
-    <button  id="createpost" (click)="createPost($event,search.value)"  [disabled]="isReady()">Post</button>
-    <div class="msg success" *ngIf="posting">
-      <span class="text-right">posting....</span>
+    <button id="createpost" (click)="createPost($event,search.value)" [disabled]="isReady()">Post</button>
+    <div class="loader" *ngIf="posting">
+
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="gooey">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+            <feBlend in="SourceGraphic" in2="goo"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+      <div class="blob blob-0"></div>
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="blob blob-4"></div>
+      <div class="blob blob-5"></div>
     </div>
-    
+    <div class="msg danger" *ngIf="notPosting">
+      <span class="text-center">There is some error!</span>
+    </div>
+
   </div>
 </div>
