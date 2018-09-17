@@ -1,10 +1,9 @@
 <div class="wrap">
   <div class="search-wrap">
-    <input type="search" 
-           name="" 
-           id="search-bar"
-           placeholder="Search Location"
-    >
+    <input placeholder=" search for location" id="search-bar" autocorrect="off" autocapitalize="off" spellcheck="off"
+      type="text" class="form-control" [formControl]="searchControl" (change)="getLocationValue(search.value)" #search>
+
+    <span id="getLoctaion" (click)="setCurrentPosition()"></span>
   </div>
   <div class="container">
     <div class="row">

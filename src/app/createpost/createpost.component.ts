@@ -25,8 +25,12 @@ export class CreatepostComponent implements OnInit {
   formData:FormData=new FormData();
   post_data:boolean;
   posting:boolean;
+<<<<<<< HEAD
   userDisplay: string;
   isLoggedIn: boolean;
+=======
+  notPosting:boolean;
+>>>>>>> b4fd695bf524ab04bde75d4bffd70fb6a3c9d676
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
@@ -161,6 +165,11 @@ export class CreatepostComponent implements OnInit {
       console.log(res);
       if(res.status){
         this.router.navigate(['/reviewpost']);
+      }
+      else{
+        setTimeout(() => {
+          this.notPosting = true;
+        }, 2000);
       }
     })
     
