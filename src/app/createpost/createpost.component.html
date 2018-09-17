@@ -28,7 +28,7 @@
           <!-- User log detail -->
           <a id="userLogin">
             <img src="../../assets//images//user.png" alt="">
-            <span>welcome</span>
+            <span *ngIf="isLoggedIn">{{userDisplay}}</span>
           </a>
 
         </div>

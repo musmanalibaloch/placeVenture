@@ -13,20 +13,22 @@
 
             <!-- User log detail -->
             <a id="userLogin" routerLink="/">
-              <img src="../../assets//images//user.png" alt="">
-              <span>welcome</span>
+              <img *ngIf="isLoggedIn" src="../../assets//images//user.png" alt="">
+              <span *ngIf="isLoggedIn">{{userDisplay}} || <span (click)="logout()"> Logout </span></span>
+              <a routerLink="/login" *ngIf="!isLoggedIn" (click)="login()" >Login/Signup</a>
+              
             </a>
 
           </div>
         <h2>Latest Reviews</h2>
-        <div class="review">
-          <h6>Location Name</h6>
+        <div *ngFor="let item of items" class="review">
+          <h6>{{item.location}}</h6>
           <div id="post">
             <div id="photo">
-              <img src="../../assets/images/location-photo.jpg" alt="">
+              <img [src]="item.image" alt="">
             </div>
             <div id="post-review">
-              <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+              <p>{{item.review}}</p>
             </div>
             <div style="clear: left;">
           </div>

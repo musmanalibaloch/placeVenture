@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from "../../services/api.service";
 import { environment } from "../../../environments/environment";
 import { Router } from "@angular/router";
+import { AuthService } from "../../services/auth.service";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,21 +12,24 @@ export class LoginComponent implements OnInit {
 
   login:any = {};
 
-  constructor(private api:ApiService,private router:Router) { }
+  constructor(private api:ApiService,private router:Router,private auth:AuthService) { }
 
   ngOnInit() {
+    this.auth.getUser().subscribe((user:any)=>{
+        if(user)
+        {
+          console.log(user);
+          this.router.navigate(['/']);
+        }
+       
+    })
   }
-
   loginData(f){
-    this.api.post(environment.userLogin,this.login).subscribe((res:any)=>{
-      console.log('login data ===>',res);
-      if(res.user.status === 1){
-        console.log('login data inside ===>',res);
-        this.router.navigate['/reviewpost'];
-      }
-      else{
-        console.log('You can not login, There is some Error!'); 
-      }
+    this.auth.login(this.login.email,this.login.password).then(user=>{
+      this.router.navigate(['/']);
+    })
+    .catch(err=>{
+      console.log(err);
     })
   }
 

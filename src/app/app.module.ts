@@ -20,7 +20,12 @@ import { environment } from '../environments/environment';
 import { ReviewpostComponent } from './reviewpost/reviewpost.component';
 import { CreatepostComponent } from './createpost/createpost.component';
 
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+//services
+import { AuthService } from './services/auth.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 // App routes
 const appRoutes:Routes =[
   { path:"", component:HomeComponent },
@@ -48,6 +53,9 @@ const appRoutes:Routes =[
       apiKey: 'AIzaSyDtWJ1VVgvC4WzSB4CdQvso7XHAgykEXaA',
       libraries: ["places"]
     }),
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     HttpClientModule, 
     FormsModule,
     ReactiveFormsModule,
@@ -56,7 +64,9 @@ const appRoutes:Routes =[
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
-    ApiService
+    ApiService,
+    AuthService,
+    AngularFirestore
   ],
   bootstrap: [AppComponent]
 })

@@ -5,6 +5,7 @@ import { ApiService } from "../services/api.service";
 import { MapsAPILoader } from '@agm/core';
 import { environment } from "../../environments/environment";
 import { Router } from "@angular/router";
+import { AuthService } from "../services/auth.service";
 
 @Component({
   selector: 'app-createpost',
@@ -24,11 +25,12 @@ export class CreatepostComponent implements OnInit {
   formData:FormData=new FormData();
   post_data:boolean;
   posting:boolean;
-
+  userDisplay: string;
+  isLoggedIn: boolean;
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
-  constructor(private router:Router ,private mapsAPILoader: MapsAPILoader,private ngZone: NgZone,private api:ApiService) {
+  constructor(private router:Router ,private mapsAPILoader: MapsAPILoader,private ngZone: NgZone,private api:ApiService,private auth:AuthService) {
     this.placeholderName="";
   }
 
@@ -68,6 +70,26 @@ export class CreatepostComponent implements OnInit {
         });
       });
     });
+
+    this.auth.getUser().subscribe((user:any)=>{
+      console.log(user);
+      if(user)
+      {
+        if (user) {
+          this.isLoggedIn=!this.isLoggedIn;
+          console.log(typeof user.email);
+          this.userDisplay = user.email;
+          console.log(this.userDisplay);
+        }
+        else {
+          this.isLoggedIn = false;
+        }
+      }
+      else
+      {
+        this.router.navigate(['/login ']);
+      }
+     })
   }
 
    setCurrentPosition() {
